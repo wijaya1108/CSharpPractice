@@ -4,11 +4,12 @@ namespace CSharpPractice
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            //thread practice
             ThreadingPractice tp = new ThreadingPractice();
-            tp.ExecuteThread();
+            var name = await tp.GetName();
+            Console.WriteLine($"Name is {name}");
+            Console.WriteLine("Main method is complete");
         }
     }
 }
