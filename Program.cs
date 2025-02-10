@@ -49,28 +49,74 @@ namespace CSharpPractice
             //names.Remove("Name");
 
             //Dictionaries
-            Dictionary<string, int> wordsToNumbers = new Dictionary<string, int>();
-            Dictionary<int, string> numbersToWords = new()
+            //Dictionary<string, int> wordsToNumbers = new Dictionary<string, int>();
+            //Dictionary<int, string> numbersToWords = new()
+            //{
+            //    {1, "One" },
+            //    {2, "two" },
+            //    {3, "Three" }
+            //};
+
+            //wordsToNumbers.Add("one", 1);
+            //wordsToNumbers.Add("two", 2);
+
+            //Console.WriteLine(numbersToWords[1]);
+            //Console.WriteLine(wordsToNumbers["one"]);
+
+            //bool isAvailable = wordsToNumbers.ContainsKey("one");
+            //Console.WriteLine(isAvailable);
+
+            //bool isThere = wordsToNumbers.TryGetValue("ones", out int value);
+            //Console.WriteLine($"Availablity of key is {isThere}, and the value is {value}");
+
+            //bool isWordAvailable = numbersToWords.TryGetValue(2, out string? stringValue);
+            //Console.WriteLine($"Availablity of key is {isWordAvailable}, and the value is {stringValue}");
+
+            //reference type
+            List<string> names = new()
             {
-                {1, "One" },
-                {2, "two" },
-                {3, "Three" }
+                "John",
+                "Nick"
             };
+           
+            void DoSomethingWithTheReference(List<string> nameList)
+            {
+                nameList.Add("Tim");
+                nameList.Add("Smith");
+            }
 
-            wordsToNumbers.Add("one", 1);
-            wordsToNumbers.Add("two", 2);
+            Console.WriteLine("Before passed into the method: ");
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+            }
 
-            Console.WriteLine(numbersToWords[1]);
-            Console.WriteLine(wordsToNumbers["one"]);
+            DoSomethingWithTheReference(names);
 
-            bool isAvailable = wordsToNumbers.ContainsKey("one");
-            Console.WriteLine(isAvailable);
+            Console.WriteLine("After passed into the method");
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+            }
 
-            bool isThere = wordsToNumbers.TryGetValue("ones", out int value);
-            Console.WriteLine($"Availablity of key is {isThere}, and the value is {value}");
+            //value type
+            Console.WriteLine("==========================");
+            Console.WriteLine("==========================");
 
-            bool isWordAvailable = numbersToWords.TryGetValue(2, out string? stringValue);
-            Console.WriteLine($"Availablity of key is {isWordAvailable}, and the value is {stringValue}");
+            string man = "Nick Ed";
+
+            void DoSomethingWithTheValueType(ref string newName)
+            {
+                newName = "Jack Reacher";
+            }
+
+            Console.WriteLine("Before the method:");
+            Console.WriteLine(man);
+
+            DoSomethingWithTheValueType(ref man);
+
+            Console.WriteLine("After the method:");
+            Console.WriteLine(man);
         }
     }
 }
