@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using CSharpPractice.Enums;
+using CSharpPractice.Struct;
+using System.Diagnostics;
 
 namespace CSharpPractice
 {
@@ -73,50 +75,102 @@ namespace CSharpPractice
             //Console.WriteLine($"Availablity of key is {isWordAvailable}, and the value is {stringValue}");
 
             //reference type
-            List<string> names = new()
+            //List<string> names = new()
+            //{
+            //    "John",
+            //    "Nick"
+            //};
+
+            //void DoSomethingWithTheReference(List<string> nameList)
+            //{
+            //    nameList.Add("Tim");
+            //    nameList.Add("Smith");
+            //}
+
+            //Console.WriteLine("Before passed into the method: ");
+            //foreach (var name in names)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+            //DoSomethingWithTheReference(names);
+
+            //Console.WriteLine("After passed into the method");
+            //foreach (var name in names)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+            ////value type
+            //Console.WriteLine("==========================");
+            //Console.WriteLine("==========================");
+
+            //string man = "Nick Ed";
+
+            //void DoSomethingWithTheValueType(ref string newName)
+            //{
+            //    newName = "Jack Reacher";
+            //}
+
+            //Console.WriteLine("Before the method:");
+            //Console.WriteLine(man);
+
+            //DoSomethingWithTheValueType(ref man);
+
+            //Console.WriteLine("After the method:");
+            //Console.WriteLine(man);
+
+            //int a = 10;
+            //int b = a;
+            //b = 20;
+            //Console.WriteLine(a);
+
+            //List<int> names = new() { 10, 20 };
+            //var newNames = names;
+
+            //Console.WriteLine("Before");
+            //foreach (var name in names)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+            //newNames.Remove(10);
+
+            //Console.WriteLine("After");
+            //foreach (var name in names)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+            //enums
+            //DaysOfWeek today = DaysOfWeek.Tuesday;
+            //Console.WriteLine(today);
+
+            //int todayIntVal = (int)today;
+            //Console.WriteLine("Int value of today: {0}", todayIntVal);
+
+            //StatusCodes status = StatusCodes.Success;
+            //Console.WriteLine(status);
+
+            //int statusCode = (int)StatusCodes.Success;
+            //Console.WriteLine(statusCode);
+
+            //struct
+            void DomSomethingWithTheStruct(Point p)
             {
-                "John",
-                "Nick"
+                p.X = 100;
+                p.Y = 200;
+            }
+
+            Point point = new Point()
+            {
+                X = 10,
+                Y = 20
             };
-           
-            void DoSomethingWithTheReference(List<string> nameList)
-            {
-                nameList.Add("Tim");
-                nameList.Add("Smith");
-            }
 
-            Console.WriteLine("Before passed into the method: ");
-            foreach (var name in names)
-            {
-                Console.WriteLine(name);
-            }
-
-            DoSomethingWithTheReference(names);
-
-            Console.WriteLine("After passed into the method");
-            foreach (var name in names)
-            {
-                Console.WriteLine(name);
-            }
-
-            //value type
-            Console.WriteLine("==========================");
-            Console.WriteLine("==========================");
-
-            string man = "Nick Ed";
-
-            void DoSomethingWithTheValueType(ref string newName)
-            {
-                newName = "Jack Reacher";
-            }
-
-            Console.WriteLine("Before the method:");
-            Console.WriteLine(man);
-
-            DoSomethingWithTheValueType(ref man);
-
-            Console.WriteLine("After the method:");
-            Console.WriteLine(man);
+            Console.WriteLine($"Before passing to method X = {point.X}, Y = {point.Y}");
+            DomSomethingWithTheStruct(point);
+            Console.WriteLine($"After passing to method X = {point.X}, Y = {point.Y}");
         }
     }
 }
