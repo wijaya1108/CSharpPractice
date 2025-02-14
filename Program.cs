@@ -1,4 +1,5 @@
-﻿using CSharpPractice.Enums;
+﻿using CSharpPractice.Classes;
+using CSharpPractice.Enums;
 using CSharpPractice.Struct;
 using System.Diagnostics;
 
@@ -156,21 +157,36 @@ namespace CSharpPractice
             //Console.WriteLine(statusCode);
 
             //struct
-            void DomSomethingWithTheStruct(Point p)
-            {
-                p.X = 100;
-                p.Y = 200;
-            }
+            //void DomSomethingWithTheStruct(Point p)
+            //{
+            //    p.X = 100;
+            //    p.Y = 200;
+            //}
 
-            Point point = new Point()
-            {
-                X = 10,
-                Y = 20
-            };
+            //Point point = new Point()
+            //{
+            //    X = 10,
+            //    Y = 20
+            //};
 
-            Console.WriteLine($"Before passing to method X = {point.X}, Y = {point.Y}");
-            DomSomethingWithTheStruct(point);
-            Console.WriteLine($"After passing to method X = {point.X}, Y = {point.Y}");
+            //Console.WriteLine($"Before passing to method X = {point.X}, Y = {point.Y}");
+            //DomSomethingWithTheStruct(point);
+            //Console.WriteLine($"After passing to method X = {point.X}, Y = {point.Y}");
+
+            TestClass tc1 = new TestClass() { NumericValue = 123, StringValue = "ABC" };
+            TestClass tc2 = new TestClass() { NumericValue = 123, StringValue = "ABC" };
+
+            Console.WriteLine("Check equality of two objects with same properties:");
+            Console.WriteLine(tc1 == tc2);
+            Console.WriteLine(tc1.Equals(tc2));
+            Console.WriteLine(object.Equals(tc1, tc2));
+
+            TestStruct ts1 = new TestStruct() { NumericValue = 123, StringValue = "ABC" };
+            TestStruct ts2 = new TestStruct() { NumericValue = 123, StringValue = "ABC" };
+
+            Console.WriteLine("Check equality of two structs with same properties:");
+            Console.WriteLine(ts1.Equals(ts2));
+            Console.WriteLine(object.Equals(ts1, ts2));
         }
     }
 }
