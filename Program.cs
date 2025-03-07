@@ -1,5 +1,8 @@
-﻿using CSharpPractice.Classes;
+﻿using CSharpPractice.Abstraction;
+using CSharpPractice.Classes;
 using CSharpPractice.Enums;
+using CSharpPractice.Interfaces;
+using CSharpPractice.Records;
 using CSharpPractice.Struct;
 using System.Diagnostics;
 
@@ -173,20 +176,98 @@ namespace CSharpPractice
             //DomSomethingWithTheStruct(point);
             //Console.WriteLine($"After passing to method X = {point.X}, Y = {point.Y}");
 
-            TestClass tc1 = new TestClass() { NumericValue = 123, StringValue = "ABC" };
-            TestClass tc2 = new TestClass() { NumericValue = 123, StringValue = "ABC" };
+            //TestClass tc1 = new TestClass() { NumericValue = 123, StringValue = "ABC" };
+            //TestClass tc2 = new TestClass() { NumericValue = 123, StringValue = "ABC" };
 
-            Console.WriteLine("Check equality of two objects with same properties:");
-            Console.WriteLine(tc1 == tc2);
-            Console.WriteLine(tc1.Equals(tc2));
-            Console.WriteLine(object.Equals(tc1, tc2));
+            //Console.WriteLine("Check equality of two objects with same properties:");
+            //Console.WriteLine(tc1 == tc2);
+            //Console.WriteLine(tc1.Equals(tc2));
+            //Console.WriteLine(object.Equals(tc1, tc2));
 
-            TestStruct ts1 = new TestStruct() { NumericValue = 123, StringValue = "ABC" };
-            TestStruct ts2 = new TestStruct() { NumericValue = 123, StringValue = "ABC" };
+            //TestStruct ts1 = new TestStruct() { NumericValue = 123, StringValue = "ABC" };
+            //TestStruct ts2 = new TestStruct() { NumericValue = 123, StringValue = "ABC" };
 
-            Console.WriteLine("Check equality of two structs with same properties:");
-            Console.WriteLine(ts1.Equals(ts2));
-            Console.WriteLine(object.Equals(ts1, ts2));
+            //Console.WriteLine("Check equality of two structs with same properties:");
+            //Console.WriteLine(ts1.Equals(ts2));
+            //Console.WriteLine(object.Equals(ts1, ts2));
+
+            //Records
+            //MyRecordA recordA = new()
+            //{
+            //    NumericValue = 123,
+            //    StringValue = "Record Testing"
+            //};
+
+            //MyRecordB recordB = new(123, "Record Testing");
+
+            //MyRecordB recordOne = new(123, "Hi");
+            //MyRecordB recordTwo = new(123, "Hi");
+
+            //Console.WriteLine(recordOne == recordTwo);
+            //Console.WriteLine(recordOne.Equals(recordTwo));
+            //Console.WriteLine(object.Equals(recordOne, recordTwo));
+
+            //MyRecordB recordThree = recordOne with { NumericValue = 456 };
+
+            //TestClass tc = new() { NumericValue = 12, StringValue = "hhhdfd" };
+
+            //Console.WriteLine(recordOne);
+            //Console.WriteLine(recordTwo);
+            //Console.WriteLine(recordThree);
+            //Console.WriteLine(tc);
+
+            //MyRecordC r1 = new(123, "New")
+            //{
+            //    Email = "hdh@gmail.com"
+            //};
+
+            //var (numericVal, stringVal) = recordOne;
+            //Console.WriteLine("Deconstructing record.............");
+            //Console.WriteLine($"Number : {numericVal}, Name : {stringVal}");
+
+            //TestClass t1 = new TestClass()
+            //{
+            //    NumericValue = 123,
+            //    StringValue = "john"
+            //};
+
+            //TestClass t2 = t1;
+            //TestClass t3 = new()
+            //{
+            //    NumericValue = t1.NumericValue,
+            //    StringValue = t2.StringValue
+            //};
+
+            //Console.WriteLine(t1.NumericValue);
+            ////t2.NumericValue = 456;
+            ////Console.WriteLine(t1.NumericValue);
+            //Console.WriteLine(t1 == t2);
+            //Console.WriteLine(t1 == t3);
+
+            //Car sedan = new() { DoorCount = 4, WheelCount = 4 };
+            //Car coupe = new() { DoorCount = 2, WheelCount = 4 };
+            //Van van = new() { DoorCount = 6, WheelCount = 6 };
+            //Bike bike = new();
+
+            //sedan.OpenDoors();
+            //coupe.OpenDoors();
+            //van.OpenDoors();
+            //bike.OpenDoors();
+
+            //IPayment paymentMethod = new PayPal();
+            //IPayment paymentMethod2 = new CreditCard();
+            //paymentMethod2.ProcessPayment(100);
+            //PaymentProcessor processor = new PaymentProcessor(paymentMethod2);
+            //processor.MakePayment(500);
+
+            MyNormalClass c1 = new MyNormalClass();
+            c1.Print();
+            c1.PrintAbstract();
+
+            NewNormalClass nc = new();
+            nc.Print();
+            nc.PrintAbstract();
+            nc.PrintInterface();
         }
     }
 }
