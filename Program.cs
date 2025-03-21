@@ -260,14 +260,21 @@ namespace CSharpPractice
             //PaymentProcessor processor = new PaymentProcessor(paymentMethod2);
             //processor.MakePayment(500);
 
-            MyNormalClass c1 = new MyNormalClass();
-            c1.Print();
-            c1.PrintAbstract();
+            //MyNormalClass c1 = new MyNormalClass();
+            //c1.Print();
+            //c1.PrintAbstract();
 
-            NewNormalClass nc = new();
-            nc.Print();
-            nc.PrintAbstract();
-            nc.PrintInterface();
+            //NewNormalClass nc = new();
+            //nc.Print();
+            //nc.PrintAbstract();
+            //nc.PrintInterface();
+
+            //DerivedClass derivedClass = new DerivedClass();
+            //derivedClass.PrintInDerivedClass();
+
+            DerivedClass2 derivedClass2 = new DerivedClass2();
+            derivedClass2.PrintInDerivedClass();
+            derivedClass2.VirtualPrintInBaseClass();
         }
     }
 }
