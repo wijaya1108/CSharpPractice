@@ -1,5 +1,6 @@
 ﻿using CSharpPractice.Abstraction;
 using CSharpPractice.Classes;
+using CSharpPractice.Composition;
 using CSharpPractice.Enums;
 using CSharpPractice.Interfaces;
 using CSharpPractice.Records;
@@ -272,9 +273,15 @@ namespace CSharpPractice
             //DerivedClass derivedClass = new DerivedClass();
             //derivedClass.PrintInDerivedClass();
 
-            DerivedClass2 derivedClass2 = new DerivedClass2();
-            derivedClass2.PrintInDerivedClass();
-            derivedClass2.VirtualPrintInBaseClass();
+            //DerivedClass2 derivedClass2 = new DerivedClass2();
+            //derivedClass2.PrintInDerivedClass();
+            //derivedClass2.VirtualPrintInBaseClass();
+
+            Computer myComputer = new Computer(new Case(),
+                new PowerSupply(),
+                new Motherboard(),
+                new HardDrive(64));
+            myComputer.PowerOn();
         }
     }
 }
